@@ -1,0 +1,107 @@
+---
+interface Props {
+	color?: string;
+	lines?: number;
+}
+
+const { color = "var(--accent-dark)", lines = 8 } = Astro.props;
+---
+
+<script>
+	class ClickSpark extends HTMLElement {
+		root: HTMLElement;
+		svg!: SVGSVGElement;
+		lines: number;
+
+		constructor() {
+			super();
+			this.attachShadow({ mode: "open" });
+			this.root = document.documentElement;
+			this.lines = parseInt(this.dataset.lines!);
+		}
+
+		connectedCallback() {
+			this.setupSpark();
+
+			this.root.addEventListener("click", (e) => {
+				this.setSparkPosition(e);
+				this.animateSpark();
+			});
+		}
+
+		setupSpark() {
+			this.shadowRoot!.innerHTML = `
+			<style>
+				:host {
+					display: contents;
+				}
+
+				svg {
+					pointer-events: none;
+					position: absolute;
+					rotate: -20deg;
+					stroke: var(--click-spark-color);
+				}
+
+				line {
+					stroke-dasharray: 30;
+					stroke-dashoffset: 30;
+					transform-origin: center;
+				}
+			</style>
+			<svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+			${Array.from(
+				{ length: this.lines },
+				(_) => `<line x1="50" y1="30" x2="50" y2="4"/>`,
+			).join("")}
+			</svg>
+			`;
+			this.svg = this.shadowRoot!.querySelector("svg")!;
+		}
+
+		setSparkPosition(e: MouseEvent) {
+			let rect = this.root.getBoundingClientRect();
+
+			this.svg.style.left =
+				e.clientX - rect.left - this.svg.clientWidth / 2 + "px";
+			this.svg.style.top =
+				e.clientY - rect.top - this.svg.clientHeight / 2 + "px";
+		}
+
+		animateSpark() {
+			let sparks = [...this.svg.children];
+			if (sparks.length <= 0) return;
+
+			let size = parseInt(sparks[0]!.getAttribute("y1")!);
+			let offset = size / 2 + "px";
+
+			let keyframes = (i: number) => {
+				let deg = `calc(${i} * (360deg / ${sparks.length}))`;
+
+				return [
+					{
+						strokeDashoffset: size * 3,
+						transform: `rotate(${deg}) translateY(${offset})`,
+					},
+					{
+						strokeDashoffset: size,
+						transform: `rotate(${deg}) translateY(0)`,
+					},
+				];
+			};
+
+			const options: KeyframeAnimationOptions = {
+				duration: 660,
+				easing: "cubic-bezier(0.25, 1, 0.5, 1)",
+				fill: "forwards",
+			};
+
+			sparks.forEach((spark, i) => spark.animate(keyframes(i), options));
+		}
+	}
+
+	customElements.define("click-spark", ClickSpark);
+</script>
+
+<click-spark data-lines={lines} style={`--click-spark-color: ${color};`}
+></click-spark>
