@@ -260,6 +260,10 @@ h5 {
 	font-size: var(--text-xl);
 }
 
+pre.astro-code {
+	padding: 0.5rem 1rem;
+}
+
 /* Utilities */
 
 .sr-only {

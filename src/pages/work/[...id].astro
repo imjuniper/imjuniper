@@ -151,6 +151,14 @@ const { Content } = await render(entry);
 		aspect-ratio: 16/9;
 	}
 
+	.content :global(pre.astro-code) {
+		font-size: var(--text-sm);
+	}
+
+	.content :global(code) {
+		font-size: var(--text-base);
+	}
+
 	.back-link,
 	.content :global(a) {
 		text-decoration: 1px solid underline transparent;
