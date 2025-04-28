@@ -5,7 +5,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 
 import Hero from "@components/Hero.astro";
 
-import lily from "@assets/lily.jpg";
+import juni from "@assets/juni-on-ground.jpg";
 import Icon from "@components/Icon.astro";
 ---
 
@@ -23,10 +23,10 @@ import Icon from "@components/Icon.astro";
 					<Picture
 						loading={"eager"}
 						formats={["avif", "webp"]}
-						src={lily}
-						width={lily.width / 3}
-						height={lily.height / 3}
-						alt="A close up of a grey kitten with green eyes."
+						src={juni}
+						width={juni.width / 2}
+						densities={[1.5, 2]}
+						alt="Juni lying on a rock looking calmly at the sky."
 						quality={85}
 					/>
 				</Hero>

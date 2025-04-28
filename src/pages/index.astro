@@ -11,7 +11,7 @@ import Icon from "@components/Icon.astro";
 import Pill from "@components/Pill.astro";
 import PortfolioPreview from "@components/PortfolioPreview.astro";
 
-import portrait from "@assets/my-notion-face-transparent.png";
+import portrait from "@assets/juni.jpg";
 
 const projects = (await getCollection("work"))
 	.filter((project) => !project.data.hidden || import.meta.env.DEV)
@@ -51,9 +51,9 @@ const projects = (await getCollection("work"))
 					loading={"eager"}
 					formats={["avif", "webp"]}
 					src={portrait}
-					width={900}
-					height={900}
-					alt="A black and white illustration of Juni, holding a donut in her mouth."
+					width={portrait.width / 2}
+					densities={[1.5, 2]}
+					alt="Headshot of Juni looking a the camera wearing golden glasses and makeup with red accents under the eyes."
 					quality={85}
 				/>
 			</header>
