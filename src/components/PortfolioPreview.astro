@@ -26,8 +26,8 @@ const { data, id } = Astro.props.project;
 			<Picture
 				formats={["avif", "webp"]}
 				src={data.img}
-				width={data.img.width}
-				height={data.img.height}
+				width={606}
+				densities={[1.5, 2]}
 				alt={data.imgAlt || ""}
 				quality={85}
 			/>

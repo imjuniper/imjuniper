@@ -63,8 +63,8 @@ const { Content } = await render(entry);
 								loading={"eager"}
 								formats={["avif", "webp"]}
 								src={entry.data.img}
-								width={entry.data.img.width}
-								height={entry.data.img.height}
+								width={700}
+								densities={[1.5, 2]}
 								alt={entry.data.imgAlt || ""}
 								quality={85}
 							/>
