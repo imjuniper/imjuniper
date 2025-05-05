@@ -12,8 +12,8 @@ importers:
         specifier: 3.3.1
         version: 3.3.1
       astro:
-        specifier: 5.7.7
-        version: 5.7.7(rollup@4.37.0)(typescript@5.5.4)
+        specifier: 5.7.10
+        version: 5.7.10(rollup@4.37.0)(typescript@5.5.4)
       sharp:
         specifier: 0.34.1
         version: 0.34.1
@@ -637,8 +637,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@5.7.7:
-    resolution: {integrity: sha512-nmp8U3oQLZ/eDlobF1UG0hiSycVvHrVyPDMXZxuohpd24Z2aO2Ea0YnfZxS5Sx4uh9c8UBxy4fHTcoQlXNx3TQ==}
+  astro@5.7.10:
+    resolution: {integrity: sha512-9TQcFZqP2w6//JXXUHfw8/5PX7KUx9EkG5O3m+hISuyeUztvjY1q5+p7+C5HiXyg24Zs3KkpieoL5BGRXGCAGA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1379,8 +1379,8 @@ packages:
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
 
-  unifont@0.4.0:
-    resolution: {integrity: sha512-wbc8b02b+K7WRHSxD+YQRYS31iVwOd0dRF7Nv73nolzyQ5n4qMtuJ4OdJSe1hEB7XT+lPb2Qk7FHxOrMReh9lw==}
+  unifont@0.4.1:
+    resolution: {integrity: sha512-zKSY9qO8svWYns+FGKjyVdLvpGPwqmsCjeJLN1xndMiqxHWBAhoWDMYMG960MxeV48clBmG+fDP59dHY1VoZvg==}
 
   unist-util-find-after@5.0.0:
     resolution: {integrity: sha512-amQa0Ep2m6hE2g72AugUItjbuM8X8cGQnFoHk0pGfrFeT9GZhzN5SW8nRsiGKK7Aif4CrACPENkA6P/Lw6fHGQ==}
@@ -1477,8 +1477,8 @@ packages:
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
 
-  vite@6.3.3:
-    resolution: {integrity: sha512-5nXH+QsELbFKhsEfWLkHrvgRpTdGJzqOZ+utSdmPTvwHmvU6ITTm3xx+mRusihkcI8GeC7lCDyn3kDtiki9scw==}
+  vite@6.3.4:
+    resolution: {integrity: sha512-BiReIiMS2fyFqbqNT/Qqt4CVITDU9M9vE+DKcVAsB+ZV0wvTKd+3hMbkpxz1b+NmEDMegpVbisKiAZOnvO92Sw==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
@@ -2056,7 +2056,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@5.7.7(rollup@4.37.0)(typescript@5.5.4):
+  astro@5.7.10(rollup@4.37.0)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.11.0
       '@astrojs/internal-helpers': 0.6.1
@@ -2105,12 +2105,12 @@ snapshots:
       tinyglobby: 0.2.13
       tsconfck: 3.1.5(typescript@5.5.4)
       ultrahtml: 1.6.0
-      unifont: 0.4.0
+      unifont: 0.4.1
       unist-util-visit: 5.0.0
       unstorage: 1.15.0
       vfile: 6.0.3
-      vite: 6.3.3
-      vitefu: 1.0.6(vite@6.3.3)
+      vite: 6.3.4
+      vitefu: 1.0.6(vite@6.3.4)
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.1
@@ -3206,7 +3206,7 @@ snapshots:
       trough: 2.2.0
       vfile: 6.0.3
 
-  unifont@0.4.0:
+  unifont@0.4.1:
     dependencies:
       css-tree: 3.1.0
       ohash: 2.0.11
@@ -3279,7 +3279,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@6.3.3:
+  vite@6.3.4:
     dependencies:
       esbuild: 0.25.1
       fdir: 6.4.4(picomatch@4.0.2)
@@ -3290,9 +3290,9 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  vitefu@1.0.6(vite@6.3.3):
+  vitefu@1.0.6(vite@6.3.4):
     optionalDependencies:
-      vite: 6.3.3
+      vite: 6.3.4
 
   web-namespaces@2.0.1: {}
 
